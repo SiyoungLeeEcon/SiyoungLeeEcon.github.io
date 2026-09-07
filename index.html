@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Siyoung Lee] — Ph.D. Applicant</title>
+<title>Siyoung Lee — Ph.D. Applicant</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
@@ -72,14 +72,20 @@
     font-size: 1.1rem;
     margin-bottom: 1.4rem;
   }
-  /* Have a photo instead? Replace .monogram div with:
-     <img src="your-photo.jpg" style="width:52px;height:52px;border-radius:50%;object-fit:cover;"> */
 
   .name{
     font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
     line-height: 1.15;
+    margin-bottom: 0.4rem;
+  }
+
+  .email-line{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--accent);
     margin-bottom: 0.5rem;
   }
+  .email-line a:hover{ text-decoration: underline; }
 
   .tagline{
     font-family: 'IBM Plex Mono', monospace;
@@ -182,7 +188,7 @@
   .research-card h3{ font-size: 1.05rem; margin-bottom: 0.4rem; }
   .research-card p{ font-size: 0.92rem; color: var(--ink-soft); }
 
-  /* CV timeline */
+  /* education timeline */
   .timeline{ margin-top: 1.6rem; }
   .t-item{
     display: grid; grid-template-columns: 150px 1fr;
@@ -204,12 +210,12 @@
   .plain-list li:first-child{ border-top: none; }
   .plain-list .year{ font-family: 'IBM Plex Mono', monospace; color: var(--accent); margin-right: 0.6rem; }
 
-  /* publications */
+  /* working papers */
   .pub-list{ list-style: none; margin-top: 1.6rem; }
   .pub-list li{
     display: grid; grid-template-columns: 70px 1fr;
     gap: 1.2rem;
-    padding: 1rem 0;
+    padding: 1.1rem 0;
     border-top: 1px solid var(--rule);
   }
   .pub-list li:first-child{ border-top: none; }
@@ -217,6 +223,11 @@
   .pub-entry{ font-size: 0.94rem; }
   .pub-entry em{ font-style: italic; }
   .pub-entry a{ font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--accent); border-bottom: 1px solid var(--accent-soft); margin-left: 0.3rem; }
+  .pub-desc{ font-size: 0.87rem; color: var(--ink-soft); margin-top: 0.45rem; max-width: 62ch; }
+
+  .wip-item{ margin-top: 1rem; }
+  .wip-item h3{ font-size: 1rem; margin-bottom: 0.3rem; }
+  .wip-item p{ font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0; }
 
   /* projects */
   .project-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 1.6rem; }
@@ -230,23 +241,7 @@
   }
   .project-card a{ font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--accent); }
 
-  /* contact */
-  .contact-cta{
-    display: inline-block;
-    font-family: 'Fraunces', serif;
-    font-size: 1.3rem;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.2rem;
-    margin: 1rem 0 1.6rem;
-  }
-  .contact-links{ display: flex; flex-wrap: wrap; gap: 1.4rem; }
-  .contact-links a{ font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--ink-soft); }
-  .contact-links a:hover{ color: var(--accent); }
-
   footer{ padding: 1.6rem 0 3rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--ink-soft); }
-
-  /* ---------- mobile top nav ---------- */
-  .mobile-topbar{ display: none; }
 
   @media (max-width: 900px){
     .page{ grid-template-columns: 1fr; }
@@ -274,24 +269,24 @@
     <div class="sidebar-top">
       <div class="monogram">SL</div>
       <h1 class="name">Siyoung Lee</h1>
-      <p class="tagline">Ph.D. Applicant — <span>[Your Field]</span><span class="cursor"></span></p>
+      <p class="email-line"><a href="mailto:siyoungecon@gmail.com">siyoungecon@gmail.com</a></p>
+      <p class="tagline">Ph.D. Applicant — <span>Economics</span><span class="cursor"></span></p>
 
       <div class="citation">
-        [Last], [F]. (2026). <em>Personal website</em>. Retrieved from [yourname].dev
+        Lee, S. (2026). <em>Personal website</em>. Retrieved from siyoungleeecon.github.io
       </div>
 
       <nav class="nav">
         <a href="#about" class="nav-link">About</a>
         <a href="#research" class="nav-link">Research</a>
-        <a href="#cv" class="nav-link">CV</a>
-        <a href="#publications" class="nav-link">Publications</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#working-papers" class="nav-link">Working Papers</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="cv.pdf" target="_blank" rel="noopener" class="nav-link">CV</a>
       </nav>
     </div>
 
     <div class="sidebar-bottom">
-      <a href="mailto:[email protected]">[email protected]</a>
       <a href="#" target="_blank" rel="noopener">Google Scholar ↗</a>
       <a href="#" target="_blank" rel="noopener">ORCID: 0000-0000-0000-0000 ↗</a>
       <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
@@ -304,21 +299,22 @@
     <!-- ABOUT -->
     <section id="about" class="section">
       <p class="eyebrow">About</p>
-      <h2>Working toward a Ph.D. in [Your Field]</h2>
+      <h2>Working toward a Ph.D. in Economics</h2>
       <p class="lede">
-        I am a [current status — e.g. senior undergraduate / M.S. student] at [Current Institution],
-        applying to Ph.D. programs in [Field] for [Fall 2027]. My work sits at the intersection of
-        [Sub-area A] and [Sub-area B], and I'm especially interested in [one-sentence research thesis].
+        I am an M.A. student in Economics at Sogang University, applying to Ph.D. programs in Economics
+        for Fall 2027. My work sits at the intersection of international finance and spatial economics,
+        and I'm especially interested in how geographic frictions shape cross-country capital flows and
+        exchange-rate dynamics.
       </p>
       <p>
-        Before this, I [one or two sentences of background — prior degree, lab, or relevant experience].
-        Outside of research, I [one line of personal interest — keeps the bio human].
+        Before my M.A., I completed a B.A. in Economics and a B.S. in Mathematics at Sogang University,
+        graduating early in seven semesters and ranking first in the School of Economics out of 63 graduates.
       </p>
       <ul class="tag-list">
-        <li>[Interest 1]</li>
-        <li>[Interest 2]</li>
-        <li>[Interest 3]</li>
-        <li>[Interest 4]</li>
+        <li>International Finance</li>
+        <li>Spatial Economics</li>
+        <li>Macroeconomics</li>
+        <li>Econometrics</li>
       </ul>
     </section>
 
@@ -326,82 +322,99 @@
     <section id="research" class="section">
       <p class="eyebrow">Research</p>
       <h2>Research Interests</h2>
-      <p class="lede">A short framing sentence connecting the themes below — what question ties your interests together.</p>
+      <p class="lede">My research asks how geography — distance, location, and space — shapes economic outcomes, from capital flows to causal identification.</p>
       <div class="research-grid">
         <article class="research-card">
           <p class="tag">Theme 01</p>
-          <h3>[Research Theme A]</h3>
-          <p>One or two sentences on the problem you care about and why it matters.</p>
+          <h3>International Finance &amp; Geography</h3>
+          <p>I study how geographic distance shapes cross-border capital allocation and exchange-rate
+          transmission, using structural portfolio-choice and multi-country exchange-rate models.</p>
         </article>
         <article class="research-card">
           <p class="tag">Theme 02</p>
-          <h3>[Research Theme B]</h3>
-          <p>One or two sentences describing this theme and a method or approach you've used.</p>
+          <h3>Spatial Economics</h3>
+          <p>My work on dynamic spatial equilibrium models examines how demographic outcomes, such as
+          fertility, interact with location choice and local economic conditions.</p>
         </article>
         <article class="research-card">
           <p class="tag">Theme 03</p>
-          <h3>[Research Theme C]</h3>
-          <p>One or two sentences on an open question you'd like to pursue during your Ph.D.</p>
+          <h3>Econometric Methodology</h3>
+          <p>I develop partial-identification methods for causal inference, including sensitivity
+          analysis for extrapolating treatment effects in regression discontinuity designs.</p>
         </article>
       </div>
     </section>
 
-    <!-- CV -->
-    <section id="cv" class="section">
-      <p class="eyebrow">CV</p>
-      <h2>Education &amp; Experience</h2>
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <p class="eyebrow">Education</p>
+      <h2>Education</h2>
 
       <div class="timeline">
         <div class="t-item">
-          <span class="t-date">2023 — Present</span>
+          <span class="t-date">Sep 2025 — Present</span>
           <div class="t-body">
-            <h3>[Degree], [Institution]</h3>
-            <p>[Major/Concentration]. [Relevant coursework, GPA, or thesis title, if useful.]</p>
+            <h3>M.A. in Economics, Sogang University</h3>
+            <p>GPA: 4.30/4.30 (in progress).</p>
           </div>
         </div>
         <div class="t-item">
-          <span class="t-date">2022 — 2023</span>
+          <span class="t-date">— Aug 2025</span>
           <div class="t-body">
-            <h3>[Role], [Lab / Company / Institution]</h3>
-            <p>[One sentence on what you did and what came of it.]</p>
-          </div>
-        </div>
-        <div class="t-item">
-          <span class="t-date">2019 — 2023</span>
-          <div class="t-body">
-            <h3>[Prior Degree], [Institution]</h3>
-            <p>[Relevant detail.]</p>
+            <h3>B.A. in Economics &amp; B.S. in Mathematics, Sogang University</h3>
+            <p>GPA: 4.27/4.30 (Economics), 4.05/4.30 (Mathematics). Ranked 1st in the School of Economics
+            (out of 63 graduates); graduated early, completing both degrees in seven semesters; Honors in
+            Economic Theory.</p>
           </div>
         </div>
       </div>
 
-      <h3 class="sub-heading">Honors &amp; Awards</h3>
+      <h3 class="sub-heading">Scholarships &amp; Fellowships</h3>
       <ul class="plain-list">
-        <li><span class="year">2025</span>[Award / Scholarship Name] — [Awarding Body]</li>
-        <li><span class="year">2024</span>[Award / Scholarship Name] — [Awarding Body]</li>
+        <li><span class="year">2025—</span>Albatross Fellowship — Sogang University</li>
+        <li><span class="year">2025—</span>Brain Korea 21-Four Fellowship — Sogang University</li>
+        <li><span class="year">2025—</span>TA Scholarship — Sogang University</li>
+        <li><span class="year">2025</span>Integrated Undergrad-Grad Degree Program Scholarship — Sogang University</li>
+        <li>Dean's List Award</li>
+        <li>Academic Excellence Award</li>
       </ul>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section">
-      <p class="eyebrow">Publications</p>
-      <h2>Publications</h2>
+    <!-- WORKING PAPERS -->
+    <section id="working-papers" class="section">
+      <p class="eyebrow">Working Papers</p>
+      <h2>Working Papers</h2>
       <ol class="pub-list">
         <li>
           <span class="pub-year">2026</span>
-          <span class="pub-entry">
-            <strong>[Last, F.]</strong>, [Coauthor, F.] (2026). <em>[Title of paper or preprint]</em>.
-            [Venue / Journal name]. <a href="#">PDF</a>
-          </span>
+          <div class="pub-entry">
+            <strong>Lee, S.*</strong>, Kwak, J. (2026). <em>The Geography of Interest Rate Differences</em>.
+            Working paper. <a href="#">PDF</a>
+            <p class="pub-desc">Shows that cross-country interest-rate differences rise systematically with
+            geographic distance, and develops a structural portfolio-choice model — estimated on bilateral
+            portfolio holdings and interest-rate data — quantifying how distance frictions and destination
+            characteristics drive this dispersion.</p>
+          </div>
         </li>
         <li>
-          <span class="pub-year">2025</span>
-          <span class="pub-entry">
-            <strong>[Last, F.]</strong>, [Coauthor, F.] (2025). <em>[Title of paper or preprint]</em>.
-            [Venue / Journal name]. <a href="#">PDF</a>
-          </span>
+          <span class="pub-year">2026</span>
+          <div class="pub-entry">
+            <strong>Lee, S.</strong>, Lee, S., Joo, S., Kim, B. (2026). <em>Sensitivity Analysis in Sharp
+            Regression Discontinuity Designs</em>. Working paper. <a href="#">PDF</a>
+            <p class="pub-desc">Develops a partial-identification framework for extrapolating causal effects
+            beyond the RD cutoff, deriving sharp bounds on average and distributional treatment effects under
+            interpretable, smoothness-based sensitivity measures. Demonstrated via Monte Carlo simulations
+            and an empirical application on external validity.</p>
+          </div>
         </li>
       </ol>
+
+      <h3 class="sub-heading">Work in Progress</h3>
+      <div class="wip-item">
+        <h3>A Spatial Theory of Exchange Rate Disconnect</h3>
+        <p>Develops a multi-country model of exchange rates to study how geographic frictions shape the
+        cross-country transmission of financial shocks.</p>
+      </div>
     </section>
 
     <!-- PROJECTS -->
@@ -430,22 +443,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <p class="eyebrow">Contact</p>
-      <h2>Get in touch</h2>
-      <p class="lede">I'd welcome the chance to talk about [research area] or answer any questions about my application.</p>
-      <a class="contact-cta" href="mailto:[email protected]">[email protected] →</a>
-      <div class="contact-links">
-        <a href="#" target="_blank" rel="noopener">Google Scholar</a>
-        <a href="#" target="_blank" rel="noopener">ORCID</a>
-        <a href="#" target="_blank" rel="noopener">GitHub</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#">Download CV (PDF)</a>
-      </div>
-    </section>
-
-    <footer>© 2026 [Your Name]. Built with care.</footer>
+    <footer>© 2026 Siyoung Lee. Built with care.</footer>
   </main>
 </div>
 
