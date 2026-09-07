@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Siyoung Lee — Ph.D. Applicant</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
   :root{
     --paper: #F7F5EF;
@@ -145,41 +145,41 @@
   .section p{ color: var(--ink); max-width: 62ch; margin-bottom: 0.9rem; }
   .section p.lede{ color: var(--ink-soft); }
 
-  .tag-list{ list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
-  .tag-list li{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.74rem;
-    padding: 0.35rem 0.7rem;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    color: var(--ink-soft);
-  }
-
-  /* research */
-  .research-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; margin-top: 1.6rem; }
-  .research-card{ border-left: 2px solid var(--rule); padding-left: 1.1rem; transition: border-color 0.2s ease; }
-  .research-card:hover{ border-color: var(--accent); }
-  .research-card .tag{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem; color: var(--accent); margin-bottom: 0.4rem;
-  }
-  .research-card h3{ font-size: 1.05rem; margin-bottom: 0.4rem; }
-  .research-card p{ font-size: 0.92rem; color: var(--ink-soft); }
-
   /* working papers */
+  .pub-list p{ margin-bottom: 0; max-width: none; }
   .pub-list{ list-style: none; margin-top: 1.6rem; }
   .pub-list li{
     display: grid; grid-template-columns: 70px 1fr;
     gap: 1.2rem;
-    padding: 1.1rem 0;
+    padding: 1.2rem 0;
     border-top: 1px solid var(--rule);
   }
   .pub-list li:first-child{ border-top: none; }
-  .pub-year{ font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--accent); }
-  .pub-entry{ font-size: 0.94rem; }
-  .pub-entry em{ font-style: italic; }
-  .pub-entry a{ font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--accent); border-bottom: 1px solid var(--accent-soft); margin-left: 0.3rem; }
-  .pub-desc{ font-size: 0.87rem; color: var(--ink-soft); margin-top: 0.45rem; max-width: 62ch; }
+  .pub-year{ font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--accent); padding-top: 0.1rem; }
+
+  .pub-title{
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  .pub-meta{
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.15rem;
+  }
+  .pub-meta em{ font-style: italic; }
+
+  .pub-links{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    margin-top: 0.5rem;
+  }
+  .pub-links a{ color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
+  .pub-links a:hover{ border-bottom-color: var(--accent); }
+  .pub-links .sep{ color: var(--rule); margin: 0 0.45rem; }
+
+  .pub-desc{ font-size: 0.87rem; color: var(--ink-soft); margin-top: 0.6rem; max-width: 62ch; }
 
   .wip-item{ margin-top: 1rem; }
   .wip-item h3{ font-size: 1rem; margin-bottom: 0.3rem; }
@@ -244,41 +244,16 @@
         exchange-rate dynamics.
       </p>
       <p>
-        Before my M.A., I completed a B.A. in <strong>Economics</strong> and a B.S. in <strong>Mathematics</strong> at Sogang University
+        Before my M.A., I completed a B.A. in Economics and a B.S. in Mathematics at Sogang University,
+        graduating early in seven semesters and ranking first in the School of Economics out of 63 graduates.
       </p>
-      <ul class="tag-list">
-        <li>International Finance</li>
-        <li>Spatial Economics</li>
-        <li>Macroeconomics</li>
-        <li>Econometrics</li>
-      </ul>
     </section>
 
     <!-- RESEARCH -->
     <section id="research" class="section">
       <p class="eyebrow">Research</p>
       <h2>Research Interests</h2>
-      <p class="lede">My research asks how geography — distance, location, and space — shapes economic outcomes, from capital flows to causal identification.</p>
-      <div class="research-grid">
-        <article class="research-card">
-          <p class="tag">Theme 01</p>
-          <h3>International Finance &amp; Geography</h3>
-          <p>I study how geographic distance shapes cross-border capital allocation and exchange-rate
-          transmission, using structural portfolio-choice and multi-country exchange-rate models.</p>
-        </article>
-        <article class="research-card">
-          <p class="tag">Theme 02</p>
-          <h3>Spatial Economics</h3>
-          <p>My work on dynamic spatial equilibrium models examines how demographic outcomes, such as
-          fertility, interact with location choice and local economic conditions.</p>
-        </article>
-        <article class="research-card">
-          <p class="tag">Theme 03</p>
-          <h3>Econometric Methodology</h3>
-          <p>I develop partial-identification methods for causal inference, including sensitivity
-          analysis for extrapolating treatment effects in regression discontinuity designs.</p>
-        </article>
-      </div>
+      <p>International Finance, Spatial Economics, Macroeconomics, and Econometrics.</p>
     </section>
 
     <!-- WORKING PAPERS -->
@@ -289,9 +264,12 @@
         <li>
           <span class="pub-year">2026</span>
           <div class="pub-entry">
-            <!-- <a href="cv.pdf" target="_blank" rel="noopener" class="nav-link">CV</a> -->
-            <strong><em>The Geography of Interest Rate Differences</em></strong>, with JunHee Kwak.
-            Working paper. <a href="The_Geography_of_Interest_rate_differences.pdf">PDF</a>
+            <p class="pub-title">The Geography of Interest Rate Differences</p>
+            <p class="pub-meta">with JunHee Kwak</p>
+            <p class="pub-meta">Working paper.</p>
+            <p class="pub-links">
+              <a href="#">PDF</a>
+            </p>
             <p class="pub-desc">Shows that cross-country interest-rate differences rise systematically with
             geographic distance, and develops a structural portfolio-choice model — estimated on bilateral
             portfolio holdings and interest-rate data — quantifying how distance frictions and destination
@@ -301,8 +279,12 @@
         <li>
           <span class="pub-year">2026</span>
           <div class="pub-entry">
-            <strong>Lee, S.</strong>, Lee, S., Joo, S., Kim, B. (2026). <em>Sensitivity Analysis in Sharp
-            Regression Discontinuity Designs</em>. Working paper. <a href="#">Regression Discontinuity.pdf</a>
+            <p class="pub-title">Sensitivity Analysis in Sharp Regression Discontinuity Designs</p>
+            <p class="pub-meta">with Sungwon Lee, Sukyung Joo, and Beomsu Kim</p>
+            <p class="pub-meta">Working paper.</p>
+            <p class="pub-links">
+              <a href="#">PDF</a><span class="sep">|</span><a href="#">Code</a>
+            </p>
             <p class="pub-desc">Develops a partial-identification framework for extrapolating causal effects
             beyond the RD cutoff, deriving sharp bounds on average and distributional treatment effects under
             interpretable, smoothness-based sensitivity measures. Demonstrated via Monte Carlo simulations
