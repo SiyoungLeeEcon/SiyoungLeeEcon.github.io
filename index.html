@@ -147,6 +147,7 @@
 
   /* working papers */
   .pub-list p{ margin-bottom: 0; max-width: none; }
+  .pub-list p{ margin-bottom: 0; max-width: none; }
   .pub-list{ list-style: none; margin-top: 1.6rem; }
   .pub-list li{
     display: grid; grid-template-columns: 70px 1fr;
@@ -169,6 +170,17 @@
     margin-bottom: 0.15rem;
   }
   .pub-meta em{ font-style: italic; }
+  .pub-meta a{ color: var(--accent); border-bottom: 1px solid var(--rule); }
+  .pub-meta a:hover{ border-bottom-color: var(--accent); }
+
+  .pub-venues{
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    opacity: 0.8;
+    margin-top: 0.55rem;
+    max-width: 62ch;
+  }
 
   .pub-links{
     font-family: 'IBM Plex Mono', monospace;
@@ -180,6 +192,34 @@
   .pub-links .sep{ color: var(--rule); margin: 0 0.45rem; }
 
   .pub-desc{ font-size: 0.87rem; color: var(--ink-soft); margin-top: 0.6rem; max-width: 62ch; }
+
+  /* research experience */
+  .exp-list{ list-style: none; margin-top: 1.6rem; }
+  .exp-list p{ margin-bottom: 0; max-width: none; }
+  .exp-list > li{
+    display: grid; grid-template-columns: 165px 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .exp-list > li:first-child{ border-top: none; }
+  .exp-date{ font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--accent); padding-top: 0.1rem; }
+  .exp-role{ font-weight: 700; font-size: 1rem; line-height: 1.4; margin-bottom: 0.3rem; }
+  .exp-meta{ font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.15rem; }
+  .exp-meta a{ color: var(--accent); border-bottom: 1px solid var(--rule); }
+  .exp-meta a:hover{ border-bottom-color: var(--accent); }
+
+  .exp-bullets{ list-style: none; margin-top: 0.6rem; max-width: 62ch; }
+  .exp-bullets li{
+    font-size: 0.87rem; color: var(--ink-soft);
+    padding-left: 1rem; margin-bottom: 0.35rem; position: relative;
+  }
+  .exp-bullets li::before{
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--rule);
+  }
+  .exp-bullets li:last-child{ margin-bottom: 0; }
 
   .wip-item{ margin-top: 1rem; }
   .wip-item h3{ font-size: 1rem; margin-bottom: 0.3rem; }
@@ -200,6 +240,7 @@
     .nav{ flex-direction: row; flex-wrap: wrap; gap: 1rem; margin-bottom: 0; }
     .sidebar-bottom{ display: none; }
     .content{ padding: 2rem 1.4rem 1rem; }
+    .pub-list li, .exp-list > li{ grid-template-columns: 1fr; gap: 0.35rem; }
   }
 </style>
 </head>
@@ -260,7 +301,7 @@
           <span class="pub-year">2026</span>
           <div class="pub-entry">
             <p class="pub-title">The Geography of Interest Rate Differences</p>
-            <p class="pub-meta">with <a href="https://sites.google.com/view/junheekwak/home" target="_blank" rel="noopener" class="nav-link"> JunHee Kwak</p></a>
+            <p class="pub-meta">with <a href="https://sites.google.com/view/junheekwak/home" target="_blank" rel="noopener">JunHee Kwak</a></p>
             <p class="pub-meta">Working paper.</p>
             <p class="pub-links">
               <a href="The_Geography_of_Interest_rate_differences.pdf">PDF</a>
@@ -287,21 +328,18 @@
           <span class="pub-year">2026</span>
           <div class="pub-entry">
             <p class="pub-title">Sensitivity Analysis in Sharp Regression Discontinuity Designs</p>
-            <p class="pub-meta">with 
-              <a href="https://sites.google.com/site/sungwonleewebpage" target="_blank" rel="noopener" class="nav-link">Sungwon Lee</a>, 
+            <p class="pub-meta">with
+              <a href="https://sites.google.com/site/sungwonleewebpage" target="_blank" rel="noopener">Sungwon Lee</a>,
               Sukyung Joo, and Beomsu Kim</p>
             <p class="pub-meta">Working paper.</p>
             <p class="pub-links">
               <a href="Regression Discontinuity.pdf">PDF</a><span class="sep">|</span><a href="#">Code</a>
             </p>
-            <p class="pub-desc">This paper develops a framework for extrapolating causal eects in sharp regression dis
-                continuity (RD) designs beyond the local neighborhood of the cuto. We adopt a partial
-                identication approach that yields bounds on a broad class of causal parameters, including
-                average and distributional treatment eects. Identication relies on smoothness restrictions
+            <p class="pub-desc">This paper develops a framework for extrapolating causal effects in sharp regression discontinuity (RD) designs beyond the local neighborhood of the cutoff. We adopt a partial identification approach that yields bounds on a broad class of causal parameters, including
+                average and distributional treatment effects. Identification relies on smoothness restrictions
                 on the distribution of potential outcomes with respect to the running variable, parameterized
                 by sensitivity measures that capture the degree of smoothness and admit an interpretation in
-                terms of statistical dependence. Within this framework, we derive sharp bounds on counter
-                factual distributions that can be estimated using standard nonparametric, semiparametric, or</p>
+                terms of statistical dependence. Within this framework, we derive sharp bounds on counterfactual distributions that can be estimated using standard nonparametric, semiparametric, or</p>
 
              <p class="pub-venues">Presented at: The International Symposium on Econometric Theory and
             Applications (Tokyo, June 2026); KER International Conference (Jeju, June 2026).</p>
@@ -340,12 +378,10 @@
           <div class="exp-body">
             <p class="exp-role">Research Assistant, “Revisiting the Fertility Puzzle: A Dynamic Spatial
             Equilibrium Approach”</p>
-            <p class="exp-meta">
-              <a href="https://arkolakis.com" target="_blank" rel="noopener" class="nav-link"> Costas Arkolakis</a> (Yale),
-             <a href="https://sites.google.com/view/junheekwak/home" target="_blank" rel="noopener" class="nav-link"> JunHee Kwak</a> (Sogang),
-              <a href="https://sites.google.com/view/hyang" target="_blank" rel="noopener" class="nav-link"> Hyunjoo Yang</a> (Sogang)</p>
-            
-            </p>
+            <p class="exp-meta">Co-PIs:
+              <a href="https://arkolakis.com" target="_blank" rel="noopener">Costas Arkolakis</a> (Yale),
+              <a href="https://sites.google.com/view/junheekwak/home" target="_blank" rel="noopener">JunHee Kwak</a> (Sogang),
+              <a href="https://sites.google.com/view/hyang" target="_blank" rel="noopener">Hyunjoo Yang</a> (Sogang)</p>
             <ul class="exp-bullets">
               <li>Designed and implemented the model’s structural estimation strategy, including analytical
               derivations for parameter identification and estimation.</li>
