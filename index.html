@@ -76,15 +76,13 @@
     border-right: 1px solid var(--rule);
   }
 
-  .monogram{
-    width: 52px; height: 52px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--paper);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    margin-bottom: 1.4rem;
+  .portrait{
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
   }
 
   .name{
@@ -250,6 +248,7 @@
       padding: 1.6rem 1.4rem;
     }
     .sidebar-top{ margin-bottom: 1rem; }
+    .portrait{ width: 120px; margin-bottom: 0.8rem; }
     .nav{ flex-direction: row; flex-wrap: wrap; gap: 1rem; margin-bottom: 0; }
     .sidebar-bottom{ display: none; }
     .content{ padding: 2rem 1.4rem 1rem; }
@@ -264,7 +263,6 @@
   <!-- ================= SIDEBAR ================= -->
   <aside class="sidebar">
     <div class="sidebar-top">
-      <!-- <div class="monogram">SL</div> -->
       <img class="portrait" src="profile.png" alt="Siyoung Lee" width="1431" height="1099">
       <h1 class="name">Siyoung Lee</h1>
       <p class="email-line"><a href="mailto:siyoungecon@gmail.com">siyoungecon@gmail.com</a></p>
