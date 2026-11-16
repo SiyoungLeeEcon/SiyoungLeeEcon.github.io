@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Studying Materials &mdash; Siyoung Lee</title>
+<meta name="description" content="Courses and resources Siyoung Lee is working through, by area.">
+<meta name="author" content="Siyoung Lee">
+<link rel="canonical" href="https://siyoungleeecon.github.io/materials.html">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --paper: #F7F5EF;
+    --paper-alt: #EEE9DD;
+    --ink: #201E1A;
+    --ink-soft: #6B675C;
+    --rule: #DAD4C4;
+    --accent: #6B2737;
+    --accent-soft: #A9576B;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  h1, h2, h3{ font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
+
+  /* ---------- layout ---------- */
+  .page{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 2rem 2rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .portrait{
+    display: block;
+    width: 210px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+  }
+
+  .name{
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+  }
+
+  .email-line{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .email-line a:hover{ text-decoration: underline; }
+
+  .tagline{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.6rem;
+  }
+  .tagline span{ color: var(--accent); }
+
+  .nav{ display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: auto; }
+  .nav-link{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    padding: 0.15rem 0;
+    position: relative;
+    width: fit-content;
+    transition: color 0.2s ease;
+  }
+  .nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0; bottom: -2px;
+    height: 1px; width: 0;
+    background: var(--accent);
+    transition: width 0.25s ease;
+  }
+  .nav-link:hover, .nav-link.active{ color: var(--ink); }
+  .nav-link:hover::after, .nav-link.active::after{ width: 100%; }
+
+  .sidebar-bottom{
+    display: flex; flex-direction: column; gap: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    padding-top: 2rem;
+  }
+  .sidebar-bottom a:hover{ color: var(--accent); }
+
+  /* ---------- main content ---------- */
+  .content{ padding: 3rem 3rem 1rem; }
+
+  .section{
+    padding: 3.4rem 0;
+    border-bottom: 1px solid var(--rule);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .section.in-view{ opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce){
+    .section{ opacity: 1; transform: none; transition: none; }
+  }
+  .section:last-of-type{ border-bottom: none; }
+
+  .section h2{ font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); margin-bottom: 1.1rem; }
+
+  .section p{ color: var(--ink); max-width: 62ch; margin-bottom: 0.9rem; }
+  .section p.lede{ color: var(--ink-soft); }
+
+  .ri{ margin-bottom: 0.35rem; }
+  .ri:last-of-type{ margin-bottom: 0; }
+  .ri-label{ font-weight: 700; }
+
+  /* working papers */
+  .pub-list p{ margin-bottom: 0; max-width: none; }
+  .pub-list{ list-style: none; margin-top: 1.6rem; }
+  .pub-list li{
+    display: grid; grid-template-columns: 70px 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .pub-list li:first-child{ border-top: none; }
+  .pub-year{ font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--accent); padding-top: 0.1rem; }
+
+  .pub-title{
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  .pub-meta{
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.15rem;
+  }
+  .pub-meta em{ font-style: italic; }
+  .pub-meta a{ color: var(--accent); border-bottom: 1px solid var(--rule); }
+  .pub-meta a:hover{ border-bottom-color: var(--accent); }
+
+  .pub-venues{
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    opacity: 0.8;
+    margin-top: 0.55rem;
+    max-width: 62ch;
+  }
+
+  .pub-links{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    margin-top: 0.5rem;
+  }
+  .pub-links a{ color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
+  .pub-links a:hover{ border-bottom-color: var(--accent); }
+  .pub-links .sep{ color: var(--rule); margin: 0 0.45rem; }
+
+  .pub-desc{ font-size: 0.87rem; color: var(--ink-soft); margin-top: 0.6rem; max-width: 62ch; }
+
+  /* research experience */
+  .exp-list{ list-style: none; margin-top: 1.6rem; }
+  .exp-list p{ margin-bottom: 0; max-width: none; }
+  .exp-list > li{
+    display: grid; grid-template-columns: 165px 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .exp-list > li:first-child{ border-top: none; }
+  .exp-date{ font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--accent); padding-top: 0.1rem; }
+  .exp-role{ font-weight: 700; font-size: 1rem; line-height: 1.4; margin-bottom: 0.3rem; }
+  .exp-meta{ font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.15rem; }
+  .exp-meta a{ color: var(--accent); border-bottom: 1px solid var(--rule); }
+  .exp-meta a:hover{ border-bottom-color: var(--accent); }
+
+  .exp-bullets{ list-style: none; margin-top: 0.6rem; max-width: 62ch; }
+  .exp-bullets li{
+    font-size: 0.87rem; color: var(--ink-soft);
+    padding-left: 1rem; margin-bottom: 0.35rem; position: relative;
+  }
+  .exp-bullets li::before{
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--rule);
+  }
+  .exp-bullets li:last-child{ margin-bottom: 0; }
+
+  .wip-item{ margin-top: 1rem; }
+  .wip-item h3{ font-size: 1rem; margin-bottom: 0.3rem; }
+  .wip-item p{ font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0; }
+
+  footer{ padding: 1.6rem 0 3rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--ink-soft); }
+
+  @media (max-width: 900px){
+    .page{ grid-template-columns: 1fr; }
+    .sidebar{
+      position: sticky; top: 0; z-index: 10;
+      height: auto; flex-direction: column;
+      border-right: none; border-bottom: 1px solid var(--rule);
+      background: var(--paper);
+      padding: 1.6rem 1.4rem;
+    }
+    .sidebar-top{ margin-bottom: 1rem; }
+    .portrait{ width: 140px; margin-bottom: 0.8rem; }
+    .nav{ flex-direction: row; flex-wrap: wrap; gap: 1rem; margin-bottom: 0; }
+    .sidebar-bottom{ display: none; }
+    .content{ padding: 2rem 1.4rem 1rem; }
+    .pub-list li, .exp-list > li, .mat-list > li{ grid-template-columns: 1fr; gap: 0.35rem; }
+  }
+
+  /* ---------- study materials ---------- */
+  .mat-list{ list-style: none; margin-top: 1.3rem; }
+  .mat-list p{ margin-bottom: 0; max-width: none; }
+  .mat-list > li{
+    display: grid; grid-template-columns: 34px 1fr;
+    gap: 0.9rem;
+    padding: 0.45rem 0;
+  }
+  .mat-num{ font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--accent); padding-top: 0.15rem; }
+  .mat-flag{
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+    border-radius: 999px;
+    padding: 0.12rem 0.55rem;
+    margin-bottom: 0.5rem;
+  }
+  .mat-title{ font-weight: 600; font-size: 0.97rem; line-height: 1.45; }
+  .mat-title a{ border-bottom: 1px solid var(--rule); }
+  .mat-title a:hover{ color: var(--accent); border-bottom-color: var(--accent); }
+  .mat-desc{ font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.3rem; max-width: 62ch; }
+  .mat-meta{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem; color: var(--ink-soft);
+    margin-top: 0.55rem;
+  }
+  .mat-meta .sep{ color: var(--rule); margin: 0 0.45rem; }
+  .mat-empty{ font-size: 0.88rem; color: var(--ink-soft); opacity: 0.75; margin-top: 1.2rem; }
+
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <h1 class="name">Siyoung Lee</h1>
+      <p class="email-line"><a href="mailto:siyoungecon@gmail.com">siyoungecon@gmail.com</a></p>
+      <p class="tagline">Ph.D. Applicant &mdash; <span>Economics</span></p>
+
+      <nav class="nav">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#research" class="nav-link">Research Interests</a>
+        <a href="index.html#working-papers" class="nav-link">Working Papers</a>
+        <a href="index.html#work-in-progress" class="nav-link">Work in Progress</a>
+        <a href="index.html#research-experience" class="nav-link">Research Experience</a>
+        <a href="materials.html" class="nav-link active">Studying Materials</a>
+        <a href="CV.pdf" target="_blank" rel="noopener" class="nav-link">CV</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <a href="#" target="_blank" rel="noopener">Google Scholar &#8599;</a>
+      <a href="https://www.linkedin.com/in/siyoung-lee-5a42533b7/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a href="https://github.com/SiyoungLeeEcon" target="_blank" rel="noopener">GitHub &#8599;</a>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="content">
+
+    <!-- ECONOMICS -->
+    <section id="econ" class="section">
+      <p class="eyebrow">Economics</p>
+      <h2>Economics</h2>
+      <p class="lede">Field courses and lecture notes outside my coursework.</p>
+      <p class="mat-empty">Selecting materials.</p>
+      <!-- Copy this block for each item:
+      <ol class="mat-list">
+        <li>
+          <span class="mat-num">01</span>
+          <div class="mat-body">
+            <p class="mat-title"><a href="URL" target="_blank" rel="noopener">Title &#8599;</a></p>
+          </div>
+        </li>
+      </ol>
+      -->
+    </section>
+
+    <!-- DATA -->
+    <section id="data" class="section">
+      <p class="eyebrow">Data</p>
+      <h2>Data</h2>
+      <p class="lede">Data engineering and large-scale data handling.</p>
+      <p class="mat-empty">Selecting materials.</p>
+      <!-- Copy this block for each item:
+      <ol class="mat-list">
+        <li>
+          <span class="mat-num">01</span>
+          <div class="mat-body">
+            <p class="mat-title"><a href="URL" target="_blank" rel="noopener">Title &#8599;</a></p>
+          </div>
+        </li>
+      </ol>
+      -->
+    </section>
+
+    <!-- COMPUTER SCIENCE -->
+    <section id="cs" class="section">
+      <p class="eyebrow">Computer Science</p>
+      <h2>Computer Science</h2>
+      <p class="lede">Tooling, systems, and the computational foundation my research needs.</p>
+      <ol class="mat-list">
+        <li>
+          <span class="mat-num">01</span>
+          <div class="mat-body">
+            <p class="mat-title"><a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener">MIT &mdash; The Missing Semester of Your CS Education &#8599;</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="mat-num">02</span>
+          <div class="mat-body">
+            <p class="mat-title"><a href="https://cs61c.org/" target="_blank" rel="noopener">Berkeley CS 61C &mdash; Great Ideas in Computer Architecture &#8599;</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="mat-num">03</span>
+          <div class="mat-body">
+            <p class="mat-title"><a href="https://15445.courses.cs.cmu.edu/" target="_blank" rel="noopener">CMU 15-445 &mdash; Database Systems &#8599;</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="mat-num">04</span>
+          <div class="mat-body">
+            <p class="mat-title"><a href="https://pdos.csail.mit.edu/6.1810/" target="_blank" rel="noopener">MIT 6.1810 &mdash; Operating System Engineering &#8599;</a></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- STATISTICS -->
+    <section id="stats" class="section">
+      <p class="eyebrow">Statistics</p>
+      <h2>Statistics</h2>
+      <p class="lede">Probability, inference, and statistical computing.</p>
+      <p class="mat-empty">Selecting materials.</p>
+      <!-- Copy this block for each item:
+      <ol class="mat-list">
+        <li>
+          <span class="mat-num">01</span>
+          <div class="mat-body">
+            <p class="mat-title"><a href="URL" target="_blank" rel="noopener">Title &#8599;</a></p>
+          </div>
+        </li>
+      </ol>
+      -->
+    </section>
+
+    <footer>&copy; 2026 Siyoung Lee</footer>
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12 });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
